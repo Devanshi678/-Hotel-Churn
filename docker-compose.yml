@@ -1,0 +1,18 @@
+#specifies the Docker Compose file format version
+version: '3.8' 
+
+services:
+  postgres:
+    image: postgres:15 #pulls the official PostgreSQL version 15 image from Docker Hub rather than building a custom one.cod
+    container_name: hotel_churn_postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

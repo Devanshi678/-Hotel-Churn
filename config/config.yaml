@@ -1,0 +1,41 @@
+# Data Generation Settings
+data_generation:
+  # Historical data (runs ONCE)
+  historical:
+    enabled: true
+    years_of_history: 4
+    num_customers: 5000
+  
+  # Weekly incremental data (runs WEEKLY)
+  weekly:
+    enabled: true
+    days_per_run: 7
+    new_customers_per_week: 50
+    bookings_per_week: 200
+
+# Customer Segmentation & Churn Rules
+customer_segments:
+  business_traveler:
+    booking_frequency: 0.7  # Books 70% more often
+    churn_definition_days: 180  # No booking in 6 months = churned
+    avg_nights_per_stay: 3
+  
+  vacation_traveler:
+    booking_frequency: 0.5  # Books regularly
+    churn_definition_days: 90  # No booking in 3 months = churned
+    avg_nights_per_stay: 7
+  
+  occasional_visitor:
+    booking_frequency: 0.2  # Books rarely
+    churn_definition_days: 365  # No booking in 1 year = churned
+    avg_nights_per_stay: 5
+
+# Business Logic
+business_rules:
+  cancellation_rate: 0.15
+  
+# Data Quality Thresholds
+quality_checks:
+  max_booking_amount: 5000
+  min_nights_stay: 1
+  max_nights_stay: 30

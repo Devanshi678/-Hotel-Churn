@@ -1,0 +1,20 @@
+# Data Generation
+faker
+
+# Database Connection & ORM
+sqlalchemy
+psycopg2-binary
+
+# Data Manipulation
+pandas
+numpy
+
+# Data Quality
+pandera
+
+# Configuration Management
+python-dotenv
+pyyaml
+
+# Workflow Orchestration
+prefect
