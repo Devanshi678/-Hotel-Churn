@@ -18,3 +18,10 @@ pyyaml
 
 # Workflow Orchestration
 prefect
+
+# Machine Learning
+scikit-learn
+imbalanced-learn
+xgboost
+matplotlib
+seaborn
