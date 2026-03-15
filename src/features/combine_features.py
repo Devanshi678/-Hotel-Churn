@@ -66,12 +66,6 @@ def create_master_dataset(as_of_date=None):
         (master_df['recency_days'] + 1)
     )
     
-    # Is customer at risk? (recency > 80% of churn threshold)
-    master_df['at_risk_flag'] = (
-        master_df['days_since_last_booking'] > 
-        (master_df['churn_threshold'] * 0.8)
-    ).astype(int)
-    
     # Customer value tier (based on total spending)
     master_df['value_tier'] = pd.qcut(
         master_df['monetary_total_spent'],
@@ -89,11 +83,6 @@ def create_master_dataset(as_of_date=None):
         'customer_id',
         'job_category',
         'age',
-        
-        # Churn features
-        'days_since_last_booking',
-        'churn_threshold',
-        'at_risk_flag',
         
         # RFM features
         'recency_days',

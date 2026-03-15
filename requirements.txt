@@ -1,6 +1,9 @@
 # Data Generation
 faker
 
+#Data imbalance
+imbalanced-learn
+
 # Database Connection & ORM
 sqlalchemy
 psycopg2-binary
